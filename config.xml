@@ -2,11 +2,12 @@
 <widget id="com.qet.eazzypos" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>EazzyPos</name>
     <description>
-        A blank PhoneGap app.
+        A Retail Point of Sale Application.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="info@qet.co.ke" href="http://cordova.io">
+        QET SYSTEMS LTD
     </author>
     <content src="index.html" />
     <access origin="*" />
+     <icon src="www/images/icon.png" />
 </widget>
