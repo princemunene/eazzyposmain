@@ -1,0 +1,88 @@
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script>
+/*
+arrayA = new Array(
+    [1, 2, 3] //array x
+    [4, 5, 6] //array y
+    );
+
+arrayZ = new Array(7, 8, 9);
+
+*/
+/*
+var items = [[]];
+arrayZ = new Array(7, 8, 9);
+items.push(arrayZ);
+localStorage.setItem("cart", JSON.stringify(items));
+*/
+var array = JSON.parse(localStorage.getItem("cart"));
+
+function multiDimensionalUnique(arr) {
+    var uniques = [];
+    var itemsFound = {};
+    for(var i = 0, l = arr.length; i < l; i++) {
+        var stringified = JSON.stringify(arr[i]);
+        if(itemsFound[stringified]) { continue; }
+        uniques.push(arr[i]);
+        itemsFound[stringified] = true;
+    }
+    return uniques;
+}
+
+function setCursor(node){
+    pos=$('#'+node).val().length;
+    node = (typeof node == "string" || node instanceof String) ? document.getElementById(node) : node;
+
+    if(!node){
+        return false;
+    }else if(node.createTextRange){
+        var textRange = node.createTextRange();
+        textRange.collapse(true);
+        textRange.moveEnd(pos);
+        textRange.moveStart(pos);
+        textRange.select();
+        return true;
+    }else if(node.setSelectionRange){
+        node.setSelectionRange(pos,pos);
+        return true;
+    }
+
+    return false;
+}
+
+function removeifexists(code){
+
+    for (var i=0;i<array.length;i++){
+
+    
+       if(array[i][0]==code){array.splice(i, 1);}
+  }
+}
+
+array=multiDimensionalUnique(array);
+/*
+
+for (var i=0;i<array.length;i++){
+
+    for (var a=0;a<array[i].length;a++){
+
+       //document.write(array[0][0])    //this will have output
+       document.write(array[i][a]+'<br/>');     //this won't.
+
+    }
+
+}
+
+*/
+
+</script>
+
+ <input type="text" id="username" name="Username" value="admin" class="form_input required" placeholder="Username" />
+
+
+<script>
+
+//var len=$('#username').val().length;
+$('#username').focus();
+setCursor('username');
+</script>

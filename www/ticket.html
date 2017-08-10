@@ -1,0 +1,108 @@
+ <head>
+  <title>Parking Ticket</title>
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="stylesheet" href="css/framework7.css?version=3.0">
+<link rel="stylesheet" href="style.css?version=3.0">
+<link rel="stylesheet" href="css/blue.css?version=3.0">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,900' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js?version=3.0"></script>
+<script src="js/excellentexport.js"></script>
+<script type="text/javascript" src="js/connectcode-javascript-code39.js"></script>
+<style>
+@media print {
+    footer {page-break-after: always;}
+    html,body{min-height:100%;}
+}
+</style>
+</head>
+
+<body style="background:#fff;overflow:auto">
+
+  <script type="text/javascript"> 
+
+    var result=JSON.parse(window.localStorage.getItem('ticketdata'));
+    
+     $.each(result, function(i, field) {
+        regn=field.regn;
+        ticketno=field.ticketno;
+        checkindate=field.checkindate;
+        checkinuser=field.checkinuser;
+        checkintime=field.checkintime;
+        });
+        
+  </script>
+
+<script type="text/javascript">
+   function CopyToClipboard(containerid) {
+  if (document.selection) { 
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(containerid));
+    range.select().createTextRange();
+    document.execCommand("Copy"); 
+
+} else if (window.getSelection) {
+    var range = document.createRange();
+     range.selectNode(document.getElementById(containerid));
+     window.getSelection().addRange(range);
+     document.execCommand("Copy");
+
+}}
+</script>
+ <div class="pages">
+  <div  class="page no-toolbar no-navbar">
+    <div class="page-content">
+    
+     <div class="navbarpages">
+       <div class="navbar_left"><a href="main.html"><img src="images/icons/blue/back.png" alt="" title="" /></a></div>
+       <div class="navbar_center"><h2><a href="main.html">EazzyPos</a></h2></div>
+       <div class="navbar_right"><a href="main.html"><img src="images/icons/blue/menu.png" alt="" title="" /></a></div>
+       
+     </div>
+     
+     <div id="pages_maincontent">
+      <h2 class="page_title">TICKET PRINT OUT</h2>
+                     
+                     <div class="page_content">
+                     
+                     <div class="contactform" tabindex="0">
+                        
+
+<style>
+@font-face { font-family: Merchant; src: url('merchant.ttf'); } 
+body,p{
+font-family: Merchant; font-size:18px; font-weight:normal; text-transform:uppercase
+}
+</style>
+
+<div style="width:270px;min-height:200px; border:0px solid #333" id="selectable" onclick="CopyToClipboard('selectable')">
+<div style="clear:both; margin-bottom:10px"></div>
+<img src="images/logo.png" style="max-height:75px; margin:0px 5px 5px 75px"/>
+<div style="clear:both"></div>
+<p style="text-align:center;font-size:26px; font-weight:normal; margin:0 0 0 0px"><script>document.write(window.localStorage.getItem('comname'))</script></p>
+<div style="clear:both;"></div>
+<p style="text-align:center;   font-weight:normal; margin:0 0 0 0px; font-size:18px">P.O Box <script>document.write(window.localStorage.getItem('comadd'))</script><br/>Tel: <script>document.write(window.localStorage.getItem('comtel'))</script></p><div style="clear:both"></div>
+<div style="clear:both;border-bottom:1px dashed #333;margin-bottom:5px;"></div>
+<p style="text-align:center;   font-weight:normal; margin:0 0 0 0px;font-size:22PX">PARKING TICKET</p>
+<div style="clear:both;border-bottom:1px dashed #333;margin-bottom:5px;padding-bottom:0"></div>
+
+<p style="text-align:left;   font-weight:normal; margin:0 0 0 10px; font-size:18px">Ticket No: <b><script>document.write(ticketno)</script></b></p>
+<p style="text-align:left;   font-weight:normal; margin:0 0 0 10px; font-size:18px">Check-in Date: <b><script>document.write(checkindate)</script></b></p>
+<p style="text-align:left;   font-weight:normal; margin:0 0 0 10px; font-size:18px">Check-in Time: <b><script>document.write(checkintime)</script></b></p>
+<p style="text-align:left;   font-weight:normal; margin:0 0 0 10px; font-size:28px">Regn: <b><script>document.write(regn)</script></b></p>
+<div style="clear:both;border-bottom:1px dashed #333;margin-top:5px;margin-bottom:5px"></div>
+
+<p style="text-align:center;   font-weight:normal; margin:0 0 0 0px; font-size:17px">Officer: <b><script>document.write(checkinuser)</script></b></p>
+<p style="text-align:center;font-size:17px; font-weight:normal;margin:0 0 0 0px">System Developers: QET SYSTEMS</p>
+<div style="clear:both;border-bottom:1px dashed #333"></div>
+</div>
+                          </div>
+                     
+                     
+                     </div>
+
+                      </div>     
+      
+    </div>
+  </div>
+</div>
+
