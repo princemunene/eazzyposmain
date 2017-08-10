@@ -38,5 +38,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
      <icon src="www/images/icon.png" />
+     <splash src="www/images/splash.png" />
      <plugin spec="https://github.com/srehanuddin/Cordova-Plugin-Bluetooth-Printer.git" source="git" />
+     <plugin spec="https://github.com/apache/cordova-plugin-splashscreen.git" source="git" />
 </widget>
