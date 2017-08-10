@@ -10,5 +10,7 @@
     <content src="index.html" />
     <access origin="*" />
      <icon src="www/images/icon.png" />
+     <splash src="www/images/splash.png" />
+     <preference name="SplashScreenDelay" value="5000" />
      <plugin spec="https://github.com/srehanuddin/Cordova-Plugin-Bluetooth-Printer.git" source="git" />
 </widget>
